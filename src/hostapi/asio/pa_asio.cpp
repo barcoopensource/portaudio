@@ -1298,6 +1298,7 @@ PaError PaAsio_Initialize( PaUtilHostApiRepresentation **hostApi, PaHostApiIndex
                 || strcmp (names[i],"ASIO Multimedia Driver")          == 0
                 || strncmp(names[i],"Premiere",8)                      == 0   //"Premiere Elements Windows Sound 1.0"
                 || strncmp(names[i],"Adobe",5)                         == 0   //"Adobe Default Windows Sound 1.5"
+                || strcmp (names[i],"Generic Low Latency ASIO Driver") == 0   // new Steinberg wrapper driver 
                )
             {
                 PA_DEBUG(("BLACKLISTED!!!\n"));
