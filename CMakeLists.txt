@@ -39,6 +39,19 @@ IF(PA_DLL_LINK_WITH_STATIC_RUNTIME)
   ENDFOREACH(flag_var)
 ENDIF(PA_DLL_LINK_WITH_STATIC_RUNTIME)
 
+OPTION(PA_FORCE_DEBUG_INFO_INTERNAL "Put debug information into binary (/Z7 compiler option)" OFF)
+IF(PA_FORCE_DEBUG_INFO_INTERNAL)
+
+  FOREACH(flag_var
+    CMAKE_C_FLAGS_DEBUG
+    CMAKE_CXX_FLAGS_DEBUG)
+    IF(${flag_var} MATCHES "/Zi")
+      STRING(REGEX REPLACE "/Zi" "/Z7" ${flag_var} "${${flag_var}}")
+    ENDIF(${flag_var} MATCHES "/Zi")
+  ENDFOREACH(flag_var)
+
+ENDIF(PA_FORCE_DEBUG_INFO_INTERNAL)
+
 ENDIF(WIN32 AND MSVC)
 
 IF(WIN32)
