@@ -26,7 +26,7 @@ ADD_DEFINITIONS(-DPA_ENABLE_DEBUG_OUTPUT)
 ENDIF(PA_ENABLE_DEBUG_OUTPUT)
 
 IF(WIN32 AND MSVC)
-OPTION(PA_DLL_LINK_WITH_STATIC_RUNTIME "Link with static runtime libraries (minimizes runtime dependencies)" ON)
+OPTION(PA_DLL_LINK_WITH_STATIC_RUNTIME "Link with static runtime libraries (minimizes runtime dependencies)" OFF)
 IF(PA_DLL_LINK_WITH_STATIC_RUNTIME)
   FOREACH(flag_var
 		CMAKE_C_FLAGS CMAKE_C_FLAGS_DEBUG CMAKE_C_FLAGS_RELEASE
