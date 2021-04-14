@@ -1298,8 +1298,8 @@ PaError PaAsio_Initialize( PaUtilHostApiRepresentation **hostApi, PaHostApiIndex
                 || strcmp (names[i],"ASIO Multimedia Driver")          == 0   // Old Steinberg driver
                 || strncmp(names[i],"Premiere",8)                      == 0   //"Premiere Elements Windows Sound 1.0"
                 || strncmp(names[i],"Adobe",5)                         == 0   //"Adobe Default Windows Sound 1.5"
-                || strncmp(names[i],"Realtek ASIO")                    == 0   // no special "shell", just a shitty driver
-                || strncmp(names[i],"Generic Low Latency ASIO Driver") == 0   // The new name of the Steinberg shell driver 
+                || strcmp(names[i],"Realtek ASIO")                    == 0   // no special "shell", just a shitty driver
+                || strcmp(names[i],"Generic Low Latency ASIO Driver") == 0   // The new name of the Steinberg shell driver
                )
             {
                 PA_DEBUG(("BLACKLISTED!!!\n"));
